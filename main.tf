@@ -162,7 +162,7 @@ resource "aws_cloudwatch_event_rule" "stoper" {
   name        = "Invoke_scheduler_stoper"
   description = "Invoke scheduler stoper"
 
-  schedule_expression = var.start_time
+  schedule_expression = var.stop_time
 }
 
 resource "aws_cloudwatch_event_target" "scheduler_stoper" {
