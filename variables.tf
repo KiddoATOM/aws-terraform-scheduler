@@ -31,6 +31,12 @@ variable "repositories" {
   default     = ""
 }
 
+variable "buckets" {
+  description = "List of buckets to clean up by lambda scheduler. Comma separated names of the repositories to clean."
+  type        = string
+  default     = ""
+}
+
 variable "start_time" {
   description = "Schedule expression when instance will be started."
   type        = string

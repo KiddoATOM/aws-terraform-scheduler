@@ -40,6 +40,7 @@ resource "aws_lambda_function" "scheduler_stoper" {
       SchedulerTagName  = var.scheduler_tag_name
       SchedulerTagValue = var.scheduler_tag_value
       Repositories      = var.repositories
+      Buckets           = var.buckets
     }
   }
   tags = merge(map("DeployedBy", "terraform"), var.custom_tags)
@@ -123,7 +124,10 @@ resource "aws_iam_policy" "scheduler_policy" {
                 "ecr:BatchDeleteImage",
                 "ec2:StopInstances",
                 "ecr:ListImages",
-                "ec2:DescribeInstanceStatus"
+                "ec2:DescribeInstanceStatus",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:List*"
             ],
             "Resource": "*"
         }
