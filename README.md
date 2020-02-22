@@ -29,7 +29,7 @@ module "scheduler_test" {
 | environment | Environment for wich this module will be created. E.g. Development | `string` | `"Development"` | no |
 | log\_retention | Specifies the number of days you want to retain log events in the specified log group. | `number` | `14` | no |
 | repositories | List of repositories to clean up by lambda scheduler. Comma separated names of the repositories to clean. | `string` | `""` | no |
-| bucketss | List of buckets to clean up by lambda scheduler. Comma separated names of the buckets to clean. | `string` | `""` | no |
+| buckets | List of buckets to clean up by lambda scheduler. Comma separated names of the buckets to clean. | `string` | `""` | no |
 | scheduler\_tag\_name | Tag name to use as filter for lambda scheduler. | `string` | `"Scheduler"` | no |
 | scheduler\_tag\_value | Tag value to use as filter for lambda scheduler. | `string` | `"true"` | no |
 | start\_time | Schedule expression when instance will be started. | `string` | `"cron(0 8 ? * MON-FRI *)"` | no |
